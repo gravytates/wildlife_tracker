@@ -1,17 +1,12 @@
 <%= render "layouts/errors", :object => @animal %>
 
 <%= form_for @animal do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
   <%= f.label :species %>
   <%= f.text_field :species %>
-
-  <%= f.label :date %>
-  <%= f.text_field :date %>
-
-  <%= f.label :lat %>
-  <%= f.text_field :lat %>
-
-  <%= f.label :long %>
-  <%= f.text_field :long %>
 
   <%= f.label :region %>
   <%= f.text_field :region %>

@@ -1,4 +1,27 @@
-<h1><%= @animal.species %></h1>
+<h1>Meet critter <%= @animal.name %>. This animal is a <%= @animal.species %></h1>
+
+<% if @animal.sightings.any? %>
+  <h4>Here are sightings for <%= @animal.name %></h4>
+  <ul>
+    <% @animal.sightings.each do |sighting| %>
+      <li>
+        <%= sighting.description %>, <%= sighting.date %> <%= sighting.lat %> <%= sighting.long %> |
+        <%= link_to "Edit", edit_animal_sighting_path(@animal, sighting) %> |
+        <%= link_to "Delete", animal_sighting_path(@animal, sighting),
+                                              :data => {:confirm => "Sure ya?",
+                                                        :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    There aren't any sightings yet!
+  </p>
+<% end %>
+
+<p>
+  <%= link_to "Add sighting", new_animal_sighting_path(@animal) %>
+</p>
 
 <p><%= link_to "Edit", edit_animal_path(@animal) %></p>
 <p><%= link_to "Delete", animal_path(@animal),

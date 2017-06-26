@@ -1,0 +1,18 @@
+<!-- <%= render('layouts/errors', :object => @sighting) %> -->
+
+<%= form_for [@animal, @sighting] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date %>
+
+  <%= f.label :lat %>
+  <%= f.text_field :lat %>
+
+  <%= f.label :long %>
+  <%= f.text_field :long %>
+
+  <p><%= f.submit %></p>
+
+<% end %>
