@@ -9,4 +9,11 @@ describe "add animal process" do
     click_on 'Create Animal'
     expect(page).to have_content 'Animals'
   end
+
+  it "gives error when no name is entered" do
+    visit new_animal_path
+    click_on 'Create Animal'
+    expect(page).to have_content 'errors'
+  end
+
 end
