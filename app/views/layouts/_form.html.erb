@@ -1,11 +1,4 @@
-<% if @animal.errors.any? %>
-  <h3>Oops there it is (errors)</h3>
-  <ul>
-    <% @animal.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "layouts/errors", :object => @animal %>
 
 <%= form_for @animal do |f| %>
   <%= f.label :species %>
