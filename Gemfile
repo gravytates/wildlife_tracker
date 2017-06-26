@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem "shoulda-callback-matchers"
+  gem 'capybara'
 end
 
 group :development do
