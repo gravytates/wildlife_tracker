@@ -1,0 +1,12 @@
+<% content_for(:title, "Sightings | Wildlife-Tracker") %>
+
+<h1>Sightings</h1>
+
+<ul>
+  <% @sightings.each do |sgt| %>
+    <li><%= link_to sgt.animal.name, animal_path(sgt.animal) %> the <%= link_to sgt.animal.species, animal_path(sgt.animal) %></li>
+    <li><%= sgt.description %></li>
+    <li>Region: <%= sgt.region %></li>
+    <hr>
+  <% end %>
+</ul>

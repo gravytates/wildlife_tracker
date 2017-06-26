@@ -1,4 +1,24 @@
 class SightingsController < ApplicationController
+  def index
+    @sightings = Sighting.all
+    # if 'All'
+    #   Sighting.all
+    # elsif 'Desert'
+    #   @sightings = :search("Desert")
+    # elsif 'Arctic'
+    #   @sightings = :search("Arctic")
+    # elsif 'Grassy Area'
+    #   @sightings = :search("Grassy Area")
+    # elsif 'Mountain'
+    #   @sightings = :search("Mountain")
+    # elsif 'Water'
+    #   @sightings = :search("Water")
+    # elsif 'South'
+    #   @sightings = :search("South")
+    # end
+
+  end
+
   def new
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new
