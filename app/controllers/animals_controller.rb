@@ -14,6 +14,7 @@ class AnimalsController < ApplicationController
   def create
     @animal = Animal.new(animal_params)
     if @animal.save
+      flash[:notice] = "Animal successfully added!"
       redirect_to animals_path
     else
       render :new
@@ -27,6 +28,7 @@ class AnimalsController < ApplicationController
   def update
     @animal = Animal.find(params[:id])
     if @animal.update(animal_params)
+      flash[:notice] = "Animal successfully updated!"
       redirect_to animals_path
     else
       render :edit
