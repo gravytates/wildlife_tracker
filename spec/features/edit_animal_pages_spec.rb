@@ -9,4 +9,13 @@ describe 'the edit an animal process' do
     click_on 'Update Animal'
     expect(page).to have_content 'Squirrel'
   end
+
+  it 'gives error when no name is entered' do
+    animal = Animal.create(:species => 'Squirrel', :name => 'Sara')
+    visit animal_path(animal)
+    click_on 'Edit'
+    fill_in 'Name', :with => ''
+    click_on 'Update Animal'
+    expect(page).to have_content 'errors'
+  end
 end
