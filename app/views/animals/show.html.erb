@@ -7,7 +7,7 @@
   <ul>
     <% @animal.sightings.each do |sighting| %>
       <li>
-        <%= sighting.description %>, <%= sighting.date %> <%= sighting.lat %> <%= sighting.long %> |
+        <%= sighting.description %>, <%= sighting.region %> <%= sighting.date %> <%= sighting.lat %> <%= sighting.long %> |
         <%= link_to "Edit #{sighting.description}", edit_animal_sighting_path(@animal, sighting) %> |
         <%= link_to "Delete #{sighting.description}", animal_sighting_path(@animal, sighting),
                                               :data => {:confirm => "Sure ya?",
