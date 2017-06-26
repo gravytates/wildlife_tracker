@@ -1,3 +1,5 @@
+<% content_for(:title, "#{@animal.name} | Wildlife-Tracker") %>
+
 <h1>Meet critter <%= @animal.name %>. This animal is a <%= @animal.species %></h1>
 
 <% if @animal.sightings.any? %>
